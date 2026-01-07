@@ -56,4 +56,17 @@ function logout_user()
 {
     $_SESSION = [];
     session_destroy();
+    session_unset();
+}
+
+function login_user($user)
+{
+    $_SESSION['logged_in'] = true;
+    $_SESSION['user'] = $user;
+}
+
+function register_user($user)
+{
+    $_SESSION['logged_in'] = true;
+    $_SESSION['user'] = $user;
 }
